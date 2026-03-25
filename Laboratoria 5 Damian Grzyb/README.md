@@ -23,6 +23,7 @@ Wyjście z programu.
 ## 3. Struktura plików
 •	`main.py`: 
 Pętla główna gry, obsługa okna i renderowanie UI.
+
 •	`ship.py`: 
 Logika klasy Ship, macierz rotacji, fizyka ruchu oraz definicja kształtu statku.
 
