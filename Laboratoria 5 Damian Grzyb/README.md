@@ -11,12 +11,16 @@ python main.py
 
 ### 2. Sterowanie
 Program obsługuje dwa schematy sterowania (Strzałki oraz WSAD):
+
 •	W / ↑: 
 Jazda w przód.
+
 •	A / D / ←/→: 
 Obracanie statkiem wokół własnej osi.
+
 •	Z: 
 Hamulec awaryjny, redukuje prędkość statku i aktywuje czerwone światła stopu na tylnych skrzydłach.
+
 •	ESC: 
 Wyjście z programu.
 
