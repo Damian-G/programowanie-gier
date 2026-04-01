@@ -4,7 +4,7 @@
 ## Instrukcja Obsługi
 
 ### 1. Jak uruchomić program?
-Głównym plikiem wejściowym jest **`main.py`**. Aby odpalić grę, upewnij się, że masz zainstalowaną bibliotekę pyray i oba pliki (`main.py` oraz `ship.py`) znajdują się w tym samym folderze.
+Głównym plikiem wejściowym jest **`main.py`**. Aby odpalić grę, upewnij się, że masz zainstalowaną bibliotekę pyray i pliki (`main.py`, `ship.py`, `asteroid.py`, `utils.py`, `config.py`) znajdują się w tym samym folderze.
 ```bash
 python main.py
 ```
