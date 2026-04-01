@@ -1,5 +1,5 @@
 # Laboratoria 06
-![Podgląd gry](./podglad_gry.png)
+![Podgląd gry](./podgląd_gry.png)
 
 ## Instrukcja Obsługi
 
