@@ -1,5 +1,5 @@
 # Laboratoria 06
-![Podgląd gry](./podgląd_gry.png)
+![Podgląd gry](./podgląd.png)
 
 ## Instrukcja Obsługi
 
@@ -35,8 +35,14 @@ logika ruchu, obrotu i rysowania gracza.
 generowanie kształtów i ruch skał.
 
 •	`utils.py`: 
-funkcja ghost_positions i stałe pomocnicze.
+funkcja ghost_positions, check_collision_circles i stałe pomocnicze.
 
 •	`config.py`: 
 wszystkie liczby, prędkości i ustawienia.
+
+•	`bullet.py`: 
+obsługa pocisków.
+
+•	`explosion.py`: 
+system cząsteczek animujących wybuchy po kolizji.
 
