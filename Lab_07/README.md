@@ -1,4 +1,4 @@
-# Laboratoria 06
+# Laboratoria 07
 ![Podgląd gry](./podgląd.png)
 
 ## Instrukcja Obsługi
