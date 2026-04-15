@@ -37,7 +37,7 @@ logika ruchu, obrotu i rysowania gracza.
 generowanie kształtów i ruch skał.
 
 •	`utils.py`: 
-funkcja ghost_positions, check_collision_circles i stałe pomocnicze.
+funkcja ghost_positions, check_collision_circles, cleanup_dead i stałe pomocnicze.
 
 •	`config.py`: 
 wszystkie liczby, prędkości i ustawienia.
