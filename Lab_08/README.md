@@ -1,10 +1,12 @@
-# Laboratoria 07
-![Podgląd gry](./podgląd.png)
+# Laboratoria 08
+![menu glowne](./menu_glowne.png)
+![w_trakcie_gry](./w_trakcie_gry.png)
+![game_over](./game_over.png)
 
 ## Instrukcja Obsługi
 
 ### 1. Jak uruchomić program?
-Głównym plikiem wejściowym jest **`main.py`**. Aby odpalić grę, upewnij się, że masz zainstalowaną bibliotekę pyray i pliki (`main.py`, `ship.py`, `asteroid.py`, `utils.py`, `config.py`) znajdują się w tym samym folderze.
+Głównym plikiem wejściowym jest **`main.py`**. Aby odpalić grę, upewnij się, że masz zainstalowaną bibliotekę pyray i pliki (`main.py`, `ship.py`, `asteroid.py`, `utils.py`, `config.py`, `explosion.py`) znajdują się w tym samym folderze.
 ```bash
 python main.py
 ```
