@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c2lr3h41hh0rl"]
+
+[ext_resource type="Script" uid="uid://bh67krf5ll2uy" path="res://gracz.gd" id="1_edo4f"]
+[ext_resource type="Texture2D" uid="uid://b5xsjg667eiin" path="res://assets/gracz/Idle (1).png" id="2_ty584"]
+[ext_resource type="Texture2D" uid="uid://dsqftlc36h247" path="res://assets/gracz/Idle (2).png" id="3_yhis3"]
+[ext_resource type="Texture2D" uid="uid://bto5efl4rvqy3" path="res://assets/gracz/Idle (3).png" id="4_fr6ws"]
+[ext_resource type="Texture2D" uid="uid://bv38sveaagykk" path="res://assets/gracz/Idle (4).png" id="5_f8tl1"]
+[ext_resource type="Texture2D" uid="uid://ynwgexccq8h6" path="res://assets/gracz/Idle (5).png" id="6_ndxpr"]
+[ext_resource type="Texture2D" uid="uid://cvhxhryp4u5o6" path="res://assets/gracz/Idle (6).png" id="7_kr16y"]
+[ext_resource type="Texture2D" uid="uid://c15ox7fgch1cv" path="res://assets/gracz/Idle (7).png" id="8_flehx"]
+[ext_resource type="Texture2D" uid="uid://xoka13ky5mqt" path="res://assets/gracz/Idle (8).png" id="9_0668w"]
+[ext_resource type="Texture2D" uid="uid://dlh0jkc1f2xfd" path="res://assets/gracz/Idle (9).png" id="10_2jt44"]
+[ext_resource type="Texture2D" uid="uid://vnf7ldvgnk0q" path="res://assets/gracz/Idle (10).png" id="11_tpoks"]
+[ext_resource type="Texture2D" uid="uid://c2koje1b874do" path="res://assets/gracz/Run (1).png" id="12_p78lp"]
+[ext_resource type="Texture2D" uid="uid://dvvchp5164y3p" path="res://assets/gracz/Run (2).png" id="13_2dtts"]
+[ext_resource type="Texture2D" uid="uid://b8xsslbafvpp1" path="res://assets/gracz/Run (3).png" id="14_fou2h"]
+[ext_resource type="Texture2D" uid="uid://c3mrmages6agm" path="res://assets/gracz/Run (4).png" id="15_atrmp"]
+[ext_resource type="Texture2D" uid="uid://cqn0xdnhne3se" path="res://assets/gracz/Run (5).png" id="16_t0mxb"]
+[ext_resource type="Texture2D" uid="uid://d1y51bq1sabmw" path="res://assets/gracz/Run (6).png" id="17_rkron"]
+[ext_resource type="Texture2D" uid="uid://c87br4anuoavr" path="res://assets/gracz/Run (7).png" id="18_stmhg"]
+[ext_resource type="Texture2D" uid="uid://vlgphwcmfglp" path="res://assets/gracz/Run (8).png" id="19_jyp1l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8v2g4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ty584")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yhis3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fr6ws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f8tl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ndxpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kr16y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_flehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0668w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2jt44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tpoks")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_tpoks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p78lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2dtts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fou2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_atrmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t0mxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rkron")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_stmhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jyp1l")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myu1a"]
+radius = 36.0
+height = 138.0
+
+[node name="Node2D" type="Node2D" unique_id=1339027828]
+
+[node name="Gracz" type="CharacterBody2D" parent="." unique_id=1897772324]
+script = ExtResource("1_edo4f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gracz" unique_id=721075900]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_8v2g4")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gracz" unique_id=1798090016]
+position = Vector2(-6, 5)
+shape = SubResource("CapsuleShape2D_myu1a")
