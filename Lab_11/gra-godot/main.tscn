@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://puecsewcvyv1"]
+
+[ext_resource type="Script" uid="uid://dqai7tkky76qw" path="res://path_follow_3d.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cl71qy7sgd2ey" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://b8ikam12eisji" path="res://mesh_instance_3d.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dvdhu1j0bjsrn" path="res://bullet.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d2x4qiawluq43" path="res://enemy.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://b2r6aqt3ilk5r" path="res://wave_spawner.gd" id="6_7mycd"]
+
+[sub_resource type="Curve3D" id="Curve3D_7dm0k"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, -35, 0, 0, 0, 0, 0, 0, 0, 0, -50),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(1.2, 1.2, 1.2)
+
+[node name="Node3D" type="Node3D" unique_id=1433985558]
+script = ExtResource("1_lquwl")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=2116485606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010800362, 0.0076920986, 0)
+curve = SubResource("Curve3D_7dm0k")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=495541713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+progress = 50.0
+script = ExtResource("1_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D" unique_id=1763829341]
+mesh = SubResource("BoxMesh_7dm0k")
+script = ExtResource("2_0xm2m")
+bullet_scene = ExtResource("3_h2yge")
+
+[node name="Area3D" type="Area3D" parent="Path3D/PathFollow3D/MeshInstance3D" unique_id=1269703198]
+collision_mask = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/MeshInstance3D/Area3D" unique_id=138223816]
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Path3D/PathFollow3D/MeshInstance3D" unique_id=507716096]
+transform = Transform3D(1, 0, 0, 0, 0.30478117, 0.9524224, 0, -0.9524224, 0.30478117, 0, 2.974007, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=1221168275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093351364, 1.0192671, 1.2460365)
+
+[node name="Node3D" parent="." unique_id=1278988243 instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -47.5653)
+
+[node name="WaveSpawner" type="Node3D" parent="." unique_id=1863885633 node_paths=PackedStringArray("path_follow")]
+script = ExtResource("6_7mycd")
+enemy_scene = ExtResource("5_lquwl")
+path_follow = NodePath("../Path3D/PathFollow3D")
