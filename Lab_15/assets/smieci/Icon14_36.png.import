@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckkv06n8vlkhp"
-path="res://.godot/imported/CosmicLegacy_PetricakeGamesPNG.png-72cedc846221b4d3de0a2924340e9368.ctex"
+uid="uid://sw0r8wvuqtng"
+path="res://.godot/imported/Icon14_36.png-5bfdf333b5d22373115df7d7b609fbb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mapa/CosmicLegacy_PetricakeGamesPNG.png"
-dest_files=["res://.godot/imported/CosmicLegacy_PetricakeGamesPNG.png-72cedc846221b4d3de0a2924340e9368.ctex"]
+source_file="res://assets/smieci/Icon14_36.png"
+dest_files=["res://.godot/imported/Icon14_36.png-5bfdf333b5d22373115df7d7b609fbb6.ctex"]
 
 [params]
 

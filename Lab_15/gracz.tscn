@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c2lr3h41hh0rl"]
 
-[ext_resource type="Script" uid="uid://bh67krf5ll2uy" path="res://gracz.gd" id="1_edo4f"]
 [ext_resource type="Texture2D" uid="uid://b5xsjg667eiin" path="res://assets/gracz/Idle (1).png" id="2_ty584"]
 [ext_resource type="Texture2D" uid="uid://dsqftlc36h247" path="res://assets/gracz/Idle (2).png" id="3_yhis3"]
 [ext_resource type="Texture2D" uid="uid://bto5efl4rvqy3" path="res://assets/gracz/Idle (3).png" id="4_fr6ws"]
@@ -19,6 +18,64 @@
 [ext_resource type="Texture2D" uid="uid://d1y51bq1sabmw" path="res://assets/gracz/Run (6).png" id="17_rkron"]
 [ext_resource type="Texture2D" uid="uid://c87br4anuoavr" path="res://assets/gracz/Run (7).png" id="18_stmhg"]
 [ext_resource type="Texture2D" uid="uid://vlgphwcmfglp" path="res://assets/gracz/Run (8).png" id="19_jyp1l"]
+
+[sub_resource type="GDScript" id="GDScript_texq8"]
+resource_name = "gracz.gd"
+script/source = "extends CharacterBody2D
+
+enum Stany { IDLE, RUN, JUMP, FALL }
+var aktualny_stan = Stany.IDLE
+
+@export var SPEED = 120.0
+@export var JUMP_VELOCITY = -400.0
+@onready var animacja = $AnimatedSprite2D
+
+func _physics_process(delta: float) -> void:
+	
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	
+	if direction:
+		velocity.x = direction * SPEED
+		animacja.flip_h = direction < 0
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	_aktualizuj_stan(direction)
+	_odtworz_animacje()
+
+	move_and_slide()
+
+func _aktualizuj_stan(direction: float):
+	if not is_on_floor():
+		if velocity.y < 0:
+			aktualny_stan = Stany.JUMP
+		else:
+			aktualny_stan = Stany.FALL
+	else:
+		if direction != 0:
+			aktualny_stan = Stany.RUN
+		else:
+			aktualny_stan = Stany.IDLE
+
+func _odtworz_animacje():
+	match aktualny_stan:
+		Stany.IDLE:
+			animacja.play(\"idle\")
+		Stany.RUN:
+			animacja.play(\"run\")
+		Stany.JUMP:
+			if animacja.sprite_frames.has_animation(\"jump\"):
+				animacja.play(\"jump\")
+		Stany.FALL:
+			if animacja.sprite_frames.has_animation(\"fall\"):
+				animacja.play(\"fall\")
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8v2g4"]
 animations = [{
@@ -91,19 +148,27 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myu1a"]
-radius = 36.0
-height = 138.0
+radius = 29.949997
+height = 117.2
 
 [node name="Node2D" type="Node2D" unique_id=1339027828]
 
 [node name="Gracz" type="CharacterBody2D" parent="." unique_id=1897772324]
-script = ExtResource("1_edo4f")
+script = SubResource("GDScript_texq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gracz" unique_id=721075900]
-scale = Vector2(0.3, 0.3)
+position = Vector2(76.05, 83.4)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_8v2g4")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gracz" unique_id=1798090016]
-position = Vector2(-6, 5)
+position = Vector2(70.05, 88.4)
 shape = SubResource("CapsuleShape2D_myu1a")
+
+[node name="Camera2D" type="Camera2D" parent="Gracz" unique_id=1491858740]
+position = Vector2(76, 88)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 0.5
+rotation_smoothing_speed = 0.3
