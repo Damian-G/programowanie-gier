@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://125jtjhncr2x"]
+
+[ext_resource type="Script" uid="uid://bke14vucre7yq" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=239568165]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1242436912]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.87058824)
+
+[node name="Label" type="Label" parent="." unique_id=1173622910]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29296875
+anchor_top = 0.19598766
+anchor_right = 0.70703125
+anchor_bottom = 0.38734567
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "GIERECZKA"
+metadata/_edit_use_anchors_ = true
+
+[node name="GrajButton" type="Button" parent="." unique_id=1211518599]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40581596
+anchor_top = 0.5169753
+anchor_right = 0.59418404
+anchor_bottom = 0.720679
+offset_top = 3.0517578e-05
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 90
+text = "GRAJ"
+metadata/_edit_use_anchors_ = true

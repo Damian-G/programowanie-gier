@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dkp7fq12xtv25"]
+
+[ext_resource type="Script" uid="uid://beank0bhjkpqp" path="res://game_over.gd" id="1_y26ei"]
+
+[node name="GameOver" type="Control" unique_id=445936238]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1495581893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.76711935, 0.1508992, 9.62615e-08, 0.87058824)
+
+[node name="Label" type="Label" parent="." unique_id=252308610]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27604166
+anchor_top = 0.20679012
+anchor_right = 0.7239583
+anchor_bottom = 0.39814815
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "GAME OVER"
+metadata/_edit_use_anchors_ = true
+
+[node name="WynikLabel" type="Label" parent="." unique_id=1753142405]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -44.0
+offset_right = 159.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 90
+text = "WYNIK:"
+
+[node name="MenuButton" type="Button" parent="." unique_id=924270652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = 87.0
+offset_right = 139.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 90
+text = "MENU"
