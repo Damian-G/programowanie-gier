@@ -1,6 +1,7 @@
 extends Area2D
 
 var tekstury = []
+var zbierany = false
 
 func _ready():
 	for i in range(1, 41):
@@ -8,14 +9,39 @@ func _ready():
 		var sciezka = "res://assets/smieci/Icon14_" + numer + ".png"
 		tekstury.append(load(sciezka))
 	
-	var losowy_obrazek = tekstury[randi() % tekstury.size()]
-	$Sprite2D.texture = losowy_obrazek
+	$Sprite2D.texture = tekstury[randi() % tekstury.size()]
+	$Sprite2D.material.resource_local_to_scene = true
+
+func _process(_delta):
+	if not zbierany and $Sprite2D.material:
+		var t = Time.get_ticks_msec() * 0.003
+		var puls = 1.0 + sin(t) * 0.5
+		$Sprite2D.material.set_shader_parameter("glow_intensity", puls)
 
 func _on_body_entered(body):
-	if body.name == "Gracz":
+	if body.name == "Gracz" and not zbierany:
 		if Global.w_plecaku < 4:
 			Global.w_plecaku += 1
-			print("Zebrano! Masz w plecaku: ", Global.w_plecaku)
-			queue_free()
+			print("Zebrano! Ilość śmieci w plecaku: ", Global.w_plecaku)
+			
+			animuj_zbieranie(body)
 		else:
 			print("Plecak pełny! Odnieś śmieci do kosza.")
+
+func animuj_zbieranie(gracz):
+	zbierany = true
+	
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+	var tween = create_tween().set_parallel(true)
+	
+	tween.tween_property(self, "global_position", gracz.global_position, 0.3)\
+		.set_trans(Tween.TRANS_BACK)\
+		.set_ease(Tween.EASE_IN)
+		
+	tween.tween_property(self, "scale", Vector2(0.4, 0.4), 0.3)
+	
+	if $Sprite2D.material:
+		tween.tween_property($Sprite2D.material, "shader_parameter/glow_intensity", 5.0, 0.2)
+
+	tween.chain().tween_callback(queue_free)

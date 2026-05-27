@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bgnb86acdn25d"]
+
+[ext_resource type="PackedScene" uid="uid://d2gfs3m7pax81" path="res://sceny/wrog.tscn" id="1_y1pex"]
+[ext_resource type="SpriteFrames" uid="uid://byfdrl7cevram" path="res://wrog2.tres" id="2_ra6yw"]
+
+[node name="Wrog" unique_id=905265754 instance=ExtResource("1_y1pex")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=73935801]
+sprite_frames = ExtResource("2_ra6yw")

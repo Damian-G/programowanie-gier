@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cbvxtyatrsekv"]
+
+[ext_resource type="Script" uid="uid://4xoilyjcd1ey" path="res://skrypty/kosz.gd" id="1_28vbd"]
+[ext_resource type="Texture2D" uid="uid://vgkcvhg05q1u" path="res://assets/kosz/kosz.png" id="2_trte6"]
+[ext_resource type="FontFile" uid="uid://cdpbw512f4pw7" path="res://assets/Orbitron-Bold.ttf" id="3_kgaic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trte6"]
+size = Vector2(16, 17)
+
+[sub_resource type="LabelSettings" id="LabelSettings_trte6"]
+line_spacing = 5.0
+font = ExtResource("3_kgaic")
+font_size = 8
+outline_size = 1
+
+[node name="Kosz" type="Area2D" unique_id=535231089]
+position = Vector2(63, 41)
+script = ExtResource("1_28vbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1150706955]
+scale = Vector2(0.008744781, 0.010047959)
+texture = ExtResource("2_trte6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250188673]
+shape = SubResource("RectangleShape2D_trte6")
+
+[node name="EtykietaE" type="Label" parent="." unique_id=1840493757]
+offset_left = -42.0
+offset_top = -19.0
+offset_right = 57.0
+offset_bottom = -5.0
+text = "[E] Wyrzuć śmieci"
+label_settings = SubResource("LabelSettings_trte6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

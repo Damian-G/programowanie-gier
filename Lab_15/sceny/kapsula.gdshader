@@ -1,6 +1,5 @@
 shader_type canvas_item;
 
-// Możesz tymi suwakami kręcić w Inspektorze po prawej, żeby dostosować efekt:
 uniform float predkosc_pulsowania : hint_range(0.1, 10.0) = 4.0;
 uniform float predkosc_pradu : hint_range(0.1, 10.0) = 3.0;
 uniform float jasnosc_blysku : hint_range(1.0, 3.0) = 1.6;

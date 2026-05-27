@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d2gfs3m7pax81"]
+
+[ext_resource type="Script" uid="uid://ymsud4j7u8tb" path="res://skrypty/wrog.gd" id="1_pkgep"]
+[ext_resource type="SpriteFrames" uid="uid://ceui0kvw15n0j" path="res://wrog1.tres" id="2_pkgep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50sg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkgep"]
+size = Vector2(20, 19)
+
+[node name="Wrog" type="CharacterBody2D" unique_id=905265754 groups=["Wrogowie"]]
+script = ExtResource("1_pkgep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=73935801]
+position = Vector2(-1.1920929e-07, 2)
+scale = Vector2(0.6142857, 0.6142857)
+sprite_frames = ExtResource("2_pkgep")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330039769]
+position = Vector2(-1, 3)
+shape = SubResource("CircleShape2D_50sg2")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1113840620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=527499525]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_pkgep")
+
+[node name="Wzrok" type="RayCast2D" parent="." unique_id=1030276539]
+position = Vector2(-1.0000001, 2.9999971)
+rotation = -0.0071393284
+target_position = Vector2(14.9996195, 0.107091665)
+
+[node name="TimerStrzalu" type="Timer" parent="." unique_id=1841863222]
+one_shot = true
+autostart = true
+
+[node name="Lufa" type="Marker2D" parent="." unique_id=706099901]
+position = Vector2(0, -4)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="TimerStrzalu" to="." method="_on_timer_strzalu_timeout"]

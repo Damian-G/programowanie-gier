@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://daojosec4k66k"]
+
+[ext_resource type="Script" uid="uid://cou18h366agmc" path="res://skrypty/pocisk.gd" id="1_dhevx"]
+[ext_resource type="Texture2D" uid="uid://d2e1hu4u56n8b" path="res://assets/pociski/Bullet_002.png" id="2_30pr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sgdi"]
+size = Vector2(8.25, 8)
+
+[node name="Pocisk" type="Area2D" unique_id=1552014282]
+script = ExtResource("1_dhevx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=862496327]
+position = Vector2(-1.4210855e-14, -2.3841858e-07)
+rotation = 1.5778266
+scale = Vector2(0.05218632, 0.05218632)
+texture = ExtResource("2_30pr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=863897894]
+shape = SubResource("RectangleShape2D_7sgdi")
+
+[node name="Timer" type="Timer" parent="." unique_id=999313044]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

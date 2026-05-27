@@ -14,10 +14,8 @@ void fragment() {
 
     vec2 uv = SCREEN_UV;
 
-    // ===== TŁO =====
     vec3 bg = mix(bottom_color.rgb, top_color.rgb, uv.y);
 
-    // ===== MGŁAWICA =====
     float nebula =
         sin(uv.x * 5.0 + TIME * 0.02) *
         sin(uv.y * 3.0);
@@ -30,7 +28,6 @@ void fragment() {
 
     bg += vec3(0.18, 0.04, 0.25) * nebula;
 
-    // ===== MAŁE GWIAZDY =====
     vec2 small_grid = floor(uv * 220.0);
 
     float small_rand = random(small_grid);
@@ -38,7 +35,6 @@ void fragment() {
     float small_star =
         step(1.0 - small_star_density, small_rand);
 
-    // losowa pozycja gwiazdy w gridzie
     vec2 small_offset = vec2(
         random(small_grid),
         random(small_grid + 15.0)
@@ -59,7 +55,6 @@ void fragment() {
 
     small_star *= small_shape * small_twinkle * 0.7;
 
-    // ===== DUŻE GWIAZDY =====
     vec2 big_grid = floor(uv * 80.0);
 
     float big_rand = random(big_grid + 42.0);
@@ -86,7 +81,6 @@ void fragment() {
 
     big_star *= big_shape * big_twinkle;
 
-    // ===== FINAL =====
     vec3 stars =
         vec3(small_star * 0.8) +
         vec3(big_star);

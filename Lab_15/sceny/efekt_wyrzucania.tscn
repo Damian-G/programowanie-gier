@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bjugdrovmw3d0"]
+
+[ext_resource type="Script" uid="uid://bgq48jf2vg1kb" path="res://skrypty/efekt_wyrzucania.gd" id="1_07vq2"]
+
+[node name="EfektWyrzucania" type="Node2D" unique_id=250402824]
+script = ExtResource("1_07vq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=18069555]
+script = ExtResource("1_07vq2")

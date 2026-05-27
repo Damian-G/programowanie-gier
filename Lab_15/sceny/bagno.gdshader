@@ -6,11 +6,8 @@ uniform float speed = 1.0;
 uniform float scale = 0.05; // Skala (im mniejsza, tym większe fale rozciągnięte na wszystkie kafelki)
 
 void fragment() {
-    // Używamy SCREEN_UV lub współrzędnych świata, aby zsynchronizować kafelki.
-    // Dzięki temu każdy piksel oblicza pozycję względem ekranu/świata, a nie swojego kafelka.
     vec2 world_pos = SCREEN_UV / SCREEN_PIXEL_SIZE * scale;
     
-    // Tworzymy ruchomy wzór bazując na pozycji globalnej
     float wave1 = sin(world_pos.y + TIME * speed);
     float wave2 = cos(world_pos.x + TIME * speed * 0.7);
     

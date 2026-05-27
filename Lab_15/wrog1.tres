@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ceui0kvw15n0j"]
+
+[ext_resource type="Texture2D" uid="uid://dkdnk0b3ut7ev" path="res://assets/statki/tinyShip2.png" id="1_6koqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lanw"]
+atlas = ExtResource("1_6koqh")
+region = Rect2(0, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nl6d"]
+atlas = ExtResource("1_6koqh")
+region = Rect2(35, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbejd"]
+atlas = ExtResource("1_6koqh")
+region = Rect2(70, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17ouw"]
+atlas = ExtResource("1_6koqh")
+region = Rect2(105, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsjfa"]
+atlas = ExtResource("1_6koqh")
+region = Rect2(140, 0, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcdhq"]
+atlas = ExtResource("1_6koqh")
+region = Rect2(175, 0, 35, 36)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lanw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nl6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbejd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17ouw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsjfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcdhq")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 15.0
+}]
