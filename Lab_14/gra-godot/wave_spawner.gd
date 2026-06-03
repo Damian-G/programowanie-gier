@@ -3,17 +3,21 @@ extends Node
 @export var enemy_scene: PackedScene
 @export var path_follow: PathFollow3D
 
+const SPAWN_DIST_NEAR: float = -40.0
+const SPAWN_DIST_NORMAL: float = -45.0
+const SPAWN_DIST_FAR: float = -50.0
+
 #czas od startu gry
 var time_elapsed: float = 0.0
 
 #lista wrogów, kiedy i ilu się pojawi
 var waves: Array = [
-	{ "delay": 1.0, "count": 1, "x_positions": [-1.5, 0.0, 1.5], "z_offset": -40.0, "spawned": false },
-	{ "delay": 2.0, "count": 2, "x_positions": [-1.5, 1.5], "z_offset": -50.0, "spawned": false },
-	{ "delay": 3.0, "count": 3, "x_positions": [-1, -3, 0, 3, 1], "z_offset": -45.0, "spawned": false }
+	{ "delay": 1.0, "count": 1, "x_positions": [-1.5, 0.0, 1.5], "z_offset": SPAWN_DIST_NEAR, "spawned": false },
+	{ "delay": 2.0, "count": 2, "x_positions": [-1.5, 1.5], "z_offset": SPAWN_DIST_FAR, "spawned": false },
+	{ "delay": 3.0, "count": 3, "x_positions": [-1, -3, 0, 3, 1], "z_offset": SPAWN_DIST_NORMAL, "spawned": false }
 ]
 
-func _process(delta: float):
+func _process(delta: float) -> void:
 	#liczenie czasu
 	time_elapsed += delta
 	
@@ -26,7 +30,7 @@ func _process(delta: float):
 	#automatyczne sprawdzanie warunku zwycięstwa
 	check_level_complete()
 
-func spawn_wave(wave_data):
+func spawn_wave(wave_data: Dictionary) -> void:
 	#tworzenie tylu wrogów, ile jest w count w liście
 	for i in range(wave_data["count"]):
 		var enemy = enemy_scene.instantiate()
@@ -49,10 +53,10 @@ func spawn_wave(wave_data):
 		enemy.died.connect(GameManager.add_score)
 
 #funkcja sprawdzająca, czy poziom został ukończony
-func check_level_complete():
+func check_level_complete() -> void:
 	var last_wave = waves[waves.size() - 1]
 	if not last_wave["spawned"]:
-		return #jeśli ostatnia fala  nie wyleciała, gramy dalej
+		return #jeśli ostatnia fala nie wyleciała, gramy dalej
 		
 	var alive_enemies = get_tree().get_nodes_in_group("enemies")
 	
