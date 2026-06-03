@@ -17,14 +17,11 @@ func _ready() -> void:
 	GameManager.lives_changed.connect(_on_lives_changed)
 	GameManager.hp_changed.connect(_on_hp_changed)
 	
-	# Zamiana nienazwanych lambd na bezpieczne metody statyczne HUD-u
 	GameManager.game_over.connect(_on_game_over)
-	GameManager.level_complete.connect(_on_level_complete)
 	
 	GameManager.enemy_killed.connect(_on_enemy_killed)
 	GameManager.player_damaged.connect(_on_player_damaged)
 	
-	# AUTOMATYCZNE ŁĄCZENIE BOSSA (Zadanie 4)
 	var boss = get_parent().get_node_or_null("Boss")
 	if boss:
 		boss.died.connect(_on_boss_died)
@@ -57,6 +54,12 @@ func _on_level_complete() -> void:
 		get_tree().change_scene_to_file("res://level_complete.tscn")
 
 func _on_boss_died() -> void:
-	#czekamy, aż Boss bezpiecznie wyczyści się z drzewa sceny
+	#dodajemy 500 score za bossa
+	GameManager.add_score(500)
+	
+	#czekamy jedną klatkę, aż punkty się zaktualizują i boss zniknie
 	await get_tree().process_frame
-	GameManager.level_complete.emit()
+	
+	#zmiana sceny na ekran sukcesu
+	if get_tree():
+		get_tree().change_scene_to_file("res://level_complete.tscn")

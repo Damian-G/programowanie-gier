@@ -102,8 +102,8 @@ func take_hit(damage: int) -> void:
 	hp -= damage
 	print("[KONSOLA BOSS] Trafienie! HP: ", hp, "/", max_hp)
 	
-	# Warunek zmiany fazy (Progi HP)
-	if hp <= max_hp / 2 and not is_phase_2:
+	# Warunek zmiany fazy (Progi HP) - poprawione dzielenie ułamkowe
+	if hp <= max_hp / 2.0 and not is_phase_2:
 		is_phase_2 = true
 		# Zamiana hitboxów za pomocą set_deferred (bezpieczna fizyka)
 		hitbox1_shape.set_deferred("disabled", true)

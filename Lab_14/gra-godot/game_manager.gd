@@ -4,7 +4,6 @@ signal score_changed(new_score: int)
 signal lives_changed(new_lives: int)
 signal hp_changed(new_hp: int)
 signal game_over
-signal level_complete
 
 signal enemy_killed
 signal player_damaged

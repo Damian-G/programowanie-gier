@@ -8,3 +8,4 @@ res://main.tscn
 res://enemy.tscn
 res://enemy.gd
 res://wave_spawner.gd
+res://game_manager.gd
