@@ -6,7 +6,7 @@ enum State { IDLE, ATTACK, RETREAT, DEATH }
 var current_state: State = State.IDLE
 
 @export_group("Stats")
-@export var max_hp: int = 20
+@export var max_hp: int = 5
 @onready var hp: int = max_hp
 
 @export_group("Shooting")
@@ -23,7 +23,7 @@ var state_timer: float = 0.0
 func _ready() -> void:
 	print("--- BOSS: Uruchamiam walkę z czystą maszyną stanów! ---")
 	
-	# Faza 1 aktywna, Faza 2 domyślnie wyłączona
+	#faza 1 aktywna, faza 2 domyślnie wyłączona
 	hitbox1_shape.disabled = false
 	hitbox2_shape.disabled = true
 	
@@ -61,20 +61,20 @@ func start_idle() -> void:
 func start_attack() -> void:
 	if current_state == State.DEATH: return
 
-	# Logika strzału w stronę gracza
+	#logika strzału w stronę gracza
 	if enemy_bullet_scene:
 		var bullet = enemy_bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
 		bullet.global_position = global_position
 		
-		# Wykrywanie wektora lotu do przodu
+		#wykrywanie wektora lotu do przodu
 		if bullet.has_method("set_direction"):
 			bullet.set_direction(Vector3(0, 0, 1))
 		elif "direction" in bullet:
 			bullet.direction = Vector3(0, 0, 1)
 		print("-> BOSS: Strzał w gracza!")
 	
-	# Płynny ruch Tweenem w bok (X)
+	#płynny ruch Tweenem w bok
 	var tween = create_tween()
 	var target_x = global_position.x + (2.5 if randf() > 0.5 else -2.5)
 	tween.tween_property(self, "global_position:x", target_x, 4.0)
@@ -86,7 +86,7 @@ func start_attack() -> void:
 func start_retreat() -> void:
 	if current_state == State.DEATH: return
 
-	# Płynne wycofanie w głąb mapy (Z)
+	#wycofanie w głąb mapy
 	var tween = create_tween()
 	var target_z = global_position.z - 5.0
 	tween.tween_property(self, "global_position:z", target_z, 1.5)
@@ -102,10 +102,9 @@ func take_hit(damage: int) -> void:
 	hp -= damage
 	print("[KONSOLA BOSS] Trafienie! HP: ", hp, "/", max_hp)
 	
-	# Warunek zmiany fazy (Progi HP) - poprawione dzielenie ułamkowe
 	if hp <= max_hp / 2.0 and not is_phase_2:
 		is_phase_2 = true
-		# Zamiana hitboxów za pomocą set_deferred (bezpieczna fizyka)
+		#zamiana hitboxów
 		hitbox1_shape.set_deferred("disabled", true)
 		hitbox2_shape.set_deferred("disabled", false)
 		print("!!! [FAZA 2] Zmiana na mniejszy HitboxPhase2!")
@@ -115,13 +114,31 @@ func take_hit(damage: int) -> void:
 
 func start_death() -> void:
 	print("!!! BOSS ZNISZCZONY !!!")
-	died.emit() # Sygnał dla HUD/GameManagera
 	
-	# Instancjonowanie eksplozji cząsteczkowej (Zadanie 3)
+	#zapisanie pozycji bossa zanim go usuniemy
+	var pozycja_smierci = global_position
+	
+	#wysłanie sygnału do HUD
+	died.emit() 
+	
+	#eksplozja cząsteczkowa
 	var explosion_scene = load("res://explosion.tscn")
 	if explosion_scene:
 		var explosion = explosion_scene.instantiate()
-		get_tree().root.add_child(explosion)
-		explosion.global_position = global_position
 		
+		#dodanie wybuchu do roota gry, żeby żył własnym życiem
+		get_tree().root.add_child(explosion)
+		
+		#ustawiamy pozycję dokładnie tam, gdzie zginął boss
+		explosion.global_position = pozycja_smierci
+		
+		#start czasteczek
+		if explosion is GPUParticles3D or explosion is CPUParticles3D:
+			explosion.emitting = true
+		elif explosion.has_node("GPUParticles3D"):
+			explosion.get_node("GPUParticles3D").emitting = true
+			
+		print("-> BOSS: Eksplozja stworzona na pozycji: ", pozycja_smierci)
+		
+	#usuniecie bossa ze swiata
 	queue_free()

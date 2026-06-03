@@ -54,12 +54,14 @@ func _on_level_complete() -> void:
 		get_tree().change_scene_to_file("res://level_complete.tscn")
 
 func _on_boss_died() -> void:
-	#dodajemy 500 score za bossa
+	#punkty za bossa
 	GameManager.add_score(500)
 	
-	#czekamy jedną klatkę, aż punkty się zaktualizują i boss zniknie
-	await get_tree().process_frame
+	print("-> HUD: Boss wybuchł! Czekam z wyświetleniem napisu końcowego...")
 	
-	#zmiana sceny na ekran sukcesu
+	#opoznienie, zeby zobaczyc eksplozje bossa
+	await get_tree().create_timer(1.0).timeout
+	
+	#po zakończeniu eksplozji zmieniamy scenę na ekran sukcesu
 	if get_tree():
 		get_tree().change_scene_to_file("res://level_complete.tscn")
