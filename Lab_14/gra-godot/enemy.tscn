@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d2x4qiawluq43"]
+
+[ext_resource type="Script" uid="uid://1tmhojy6lnlf" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://dvdhu1j0bjsrn" path="res://bullet.tscn" id="2_4gyqm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7k104"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gyqm"]
+size = Vector3(1.2, 1.2, 1.2)
+
+[node name="Node3D" type="Node3D" unique_id=1278988243]
+script = ExtResource("1_7k104")
+bullet_scene = ExtResource("2_4gyqm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1691939800]
+mesh = SubResource("BoxMesh_7k104")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1618398851]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=152700541]
+shape = SubResource("BoxShape3D_4gyqm")
