@@ -38,7 +38,6 @@
 ---
 
 ## Własne mechanizmy
-## ⚙️ Własne mechanizmy
 Projekt zawiera autorskie rozwiązania strukturalne i algorytmiczne, które wykraczają poza standardowe założenia projektowe:
 
 * **Dynamiczny System Proceduralnego Spawnowania:** Obiekty (śmieci, wrogowie, apteczki) nie są rozmieszczane statycznie na scenie. Autorski system menedżerów losuje pozycje z elastycznej puli węzłów `Marker2D` przy każdym uruchomieniu poziomu, co zapewnia wysoką regrywalność. Dodatkowo intensywność oraz limity obiektów skalują się w czasie rzeczywistym na podstawie wybranego poziomu trudności.
@@ -75,3 +74,8 @@ Gra wykorzystuje zaawansowane efekty wizualne stworzone w języku shaderów:
 
 ## Czy projekt jest klonem?
 **Nie, jest to projekt w 100% autorski.** Gra nie jest oparta na żadnym konkretnym tutorialu ani gotowym projekcie.
+
+---
+
+## Autor
+**Damian Grzyb (89245)
