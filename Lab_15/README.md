@@ -64,6 +64,7 @@ Gra wykorzystuje zaawansowane efekty wizualne stworzone w języku shaderów:
 | :--- | :--- |
 | **Grafiki** | [itch.io](https://itch.io) |
 | **Dźwięki / BGM** | [Pixabay](https://pixabay.com) |
+| **Czcionki** | [Google Fonts](https://fonts.google.com) |
 
 ---
 
