@@ -64,7 +64,7 @@ Gra wykorzystuje zaawansowane efekty wizualne stworzone w języku shaderów:
 ---
 
 ## Znane bugi
-* * Kolizja podczas ślizgu:** Podczas gdy gracz aktywuje ślizg bezpośrednio przy kolizji z kafelkiem, może dojść do zablokowania mechaniki ślizgu.
+* **Kolizja podczas ślizgu:** Podczas gdy gracz aktywuje ślizg bezpośrednio przy kolizji z kafelkiem, może dojść do zablokowania mechaniki ślizgu.
 
 ---
 
