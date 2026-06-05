@@ -1,6 +1,28 @@
-# Galaxy Cleaner
+# Galaxy Cleaner 🚀
 
-**Galaxy Cleaner** to dynamiczna gra zręcznościowa 2D osadzona w przestrzeni kosmicznej. Gracz wciela się w postać robota-sprzątacza, którego celem jest oczyszczenie planety z zalegających odpadów. Rozgrywka polega na zbieraniu śmieci (limit 4 sztuk w plecaku) i dostarczaniu ich do wyznaczonego kosza. Na drodze gracza stoją przeciwnicy oraz pułapki terenowe. Gra oferuje trzy poziomy trudności (łatwy, średni, trudny), które różnią się intensywnością spawnienia obiektów oraz liczbą przeciwników.
+![Godot Engine](https://img.shields.io/badge/Godot-4.x-blue?logo=godotengine&logoColor=white)
+![GDScript](https://img.shields.io/badge/Language-GDScript-green)
+![Status](https://img.shields.io/badge/Status-Zakończony-success)
+
+![Ekran z gry](gra.png)
+
+> **Galaxy Cleaner** to dynamiczna gra zręcznościowa 2D osadzona w przestrzeni kosmicznej. Gracz wciela się w postać robota-sprzątacza, którego celem jest oczyszczenie planety z zalegających odpadów. Rozgrywka polega na zbieraniu śmieci i dostarczaniu ich do wyznaczonego kosza. Na drodze gracza stoją przeciwnicy oraz pułapki terenowe. Gra oferuje trzy poziomy trudności (łatwy, średni, trudny), które różnią się intensywnością spawnienia obiektów oraz liczbą przeciwników.
+
+---
+
+## Jak się gra?
+* **Cel:** Posprzątaj planetę, zbierając śmieci i wyrzucając je do kosza. Uważaj na wrogów i pułapki!
+* **Plecak:** Masz limit 4 śmieci w plecaku. Musisz wracać do kosza, aby go opróżnić.
+* **Życia:** Masz 3 życia. Możesz je odzyskać, zbierając apteczki.
+
+### Sterowanie:
+| Klawisz / Akcja | Działanie |
+| :--- | :--- |
+| `← / →` | Ruch postaci |
+| `↑` | Skok |
+| `E` | Wyrzucenie śmieci do kosza |
+| `Ctrl Lewy` | Ślizg |
+| `Spacja` | Strzelanie do wrogów |
 
 ---
 
@@ -47,4 +69,4 @@ Gra wykorzystuje zaawansowane efekty wizualne stworzone w języku shaderów:
 ---
 
 ## Czy projekt jest klonem?
-**Nie — jest to projekt w 100% autorski.** Mechaniki gry, architektura maszyny stanów (FSM), system proceduralnego spawnowania obiektów oraz autorskie shadery zostały zaprojektowane i zaimplementowane samodzielnie w ramach przedmiotu. Gra nie jest oparta na żadnym konkretnym tutorialu ani gotowym projekcie.
+**Nie, jest to projekt w 100% autorski.** Gra nie jest oparta na żadnym konkretnym tutorialu ani gotowym projekcie.
