@@ -1,0 +1,488 @@
+[gd_scene format=3 uid="uid://dhoaka6ta7adp"]
+
+[ext_resource type="Script" uid="uid://peed40sp7sd2" path="res://skrypty/menu_glowne.gd" id="1_5dhc6"]
+[ext_resource type="Shader" uid="uid://c83uhhq6kcvuj" path="res://sceny/MenuGlowne.gdshader" id="2_g3ppw"]
+[ext_resource type="FontFile" uid="uid://cdpbw512f4pw7" path="res://assets/Orbitron-Bold.ttf" id="2_vhxj7"]
+[ext_resource type="FontFile" uid="uid://vu00trf4vcq6" path="res://assets/Orbitron-VariableFont_wght.ttf" id="3_g3ppw"]
+[ext_resource type="Texture2D" uid="uid://ch5ra21di6xjy" path="res://assets/statki/statek1.png" id="4_bkn3v"]
+[ext_resource type="Texture2D" uid="uid://dk01tu5p3svql" path="res://assets/statki/statek3.png" id="4_hv3o5"]
+[ext_resource type="Texture2D" uid="uid://bp48lerj41vov" path="res://assets/smieci/Icon14_01.png" id="4_jh8yx"]
+[ext_resource type="Texture2D" uid="uid://cqfv25ad6pbnn" path="res://assets/statki/statek2.png" id="5_6svga"]
+[ext_resource type="Texture2D" uid="uid://dstuk8ffhn2eb" path="res://assets/pociski/Bullet_000 — kopia.png" id="5_dr4f6"]
+[ext_resource type="Texture2D" uid="uid://dqvosfagbmxe4" path="res://assets/gracz/Jump (4).png" id="5_g3ppw"]
+[ext_resource type="Texture2D" uid="uid://cq4v15dm038wv" path="res://assets/smieci/Icon14_24.png" id="5_lo6n2"]
+[ext_resource type="Texture2D" uid="uid://dpmtgqiujy22d" path="res://assets/smieci/Icon14_08.png" id="6_5lhwx"]
+[ext_resource type="Texture2D" uid="uid://vgkcvhg05q1u" path="res://assets/kosz/kosz.png" id="7_6svga"]
+[ext_resource type="Texture2D" uid="uid://c2wlw0ig5tclt" path="res://assets/smieci/Icon14_25.png" id="7_qetsd"]
+[ext_resource type="Texture2D" uid="uid://1e7l5p5w600q" path="res://assets/smieci/Icon14_17.png" id="8_lqkrh"]
+[ext_resource type="Texture2D" uid="uid://bdvu1xxqtxdct" path="res://assets/smieci/Icon14_21.png" id="9_xvg1r"]
+[ext_resource type="Texture2D" uid="uid://cb4tw478px4b7" path="res://assets/smieci/Icon14_11.png" id="10_twcno"]
+[ext_resource type="Texture2D" uid="uid://bro7tdflkk6wg" path="res://assets/smieci/Icon14_26.png" id="11_i67gc"]
+[ext_resource type="Texture2D" uid="uid://b6ihmid62qv4b" path="res://assets/smieci/Icon14_13.png" id="12_onwa6"]
+[ext_resource type="AudioStream" uid="uid://2i5tf255snfx" path="res://assets/dzwieki/muzaTlo2.mp3" id="20_5lhwx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhxj7"]
+shader = ExtResource("2_g3ppw")
+shader_parameter/top_color = Color(0.03, 0.01, 0.07, 1)
+shader_parameter/bottom_color = Color(0.1, 0.02, 0.15, 1)
+shader_parameter/small_star_density = 0.559
+shader_parameter/big_star_density = 0.096
+shader_parameter/star_speed = Vector2(-0.045, 0.005)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7tyjv"]
+font = ExtResource("2_vhxj7")
+font_size = 50
+
+[node name="MenuGlowne" type="Control" unique_id=1052498118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5dhc6")
+
+[node name="TloShader" type="ColorRect" parent="." unique_id=1944539346]
+material = SubResource("ShaderMaterial_vhxj7")
+custom_minimum_size = Vector2(1100, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -272.0
+offset_right = 480.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Robot" type="TextureRect" parent="TloShader" unique_id=836377652]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -46.0
+offset_right = 215.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_g3ppw")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec1" type="TextureRect" parent="TloShader" unique_id=1707231856]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = 6.0
+offset_right = -236.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_jh8yx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec2" type="TextureRect" parent="TloShader" unique_id=1804986292]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = 28.0
+offset_right = -194.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_lo6n2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec3" type="TextureRect" parent="TloShader" unique_id=1692304235]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = 79.0
+offset_right = -115.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_5lhwx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec4" type="TextureRect" parent="TloShader" unique_id=1830581952]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = 51.0
+offset_right = -236.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_qetsd")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec5" type="TextureRect" parent="TloShader" unique_id=1840891375]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -13.0
+offset_right = -115.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_lqkrh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec6" type="TextureRect" parent="TloShader" unique_id=1536119470]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 30.0
+offset_right = -126.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_xvg1r")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec7" type="TextureRect" parent="TloShader" unique_id=420586725]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -1.0
+offset_right = -159.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_twcno")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec8" type="TextureRect" parent="TloShader" unique_id=1123093634]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -28.0
+offset_right = -217.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_i67gc")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Smiec9" type="TextureRect" parent="TloShader" unique_id=1119570266]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -38.0
+offset_right = -174.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_onwa6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Statek1" type="TextureRect" parent="TloShader" unique_id=337701428]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 55.0
+offset_right = 276.38477
+offset_bottom = 103.927
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.3683381
+texture = ExtResource("4_hv3o5")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Statek2" type="TextureRect" parent="TloShader" unique_id=1782800518]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = -18.000183
+offset_right = 297.83313
+offset_bottom = 57.27411
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -2.3335052
+texture = ExtResource("5_6svga")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Statek3" type="TextureRect" parent="TloShader" unique_id=283830020]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = 51.0
+offset_right = 187.27429
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bkn3v")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Kosz" type="TextureRect" parent="TloShader" unique_id=45416019]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 51.0
+offset_right = -174.72571
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_6svga")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Pocisk1" type="TextureRect" parent="TloShader" unique_id=1270438741]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 168.99988
+offset_top = -30.999878
+offset_right = 199.99988
+offset_bottom = -3.999878
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.8115781
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_dr4f6")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Pocisk2" type="TextureRect" parent="TloShader" unique_id=884401432]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.00012
+offset_top = 35.0
+offset_right = 187.00012
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_dr4f6")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Pocisk3" type="TextureRect" parent="TloShader" unique_id=640658378]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 182.0
+offset_top = 2.0
+offset_right = 213.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.27925268
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_dr4f6")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1834009111]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -137.0
+offset_right = 148.5
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -20
+
+[node name="Tytul" type="Label" parent="VBoxContainer" unique_id=346619312]
+layout_mode = 2
+text = "-GALAXY-"
+label_settings = SubResource("LabelSettings_7tyjv")
+
+[node name="Tytul2" type="Label" parent="VBoxContainer" unique_id=1826909580]
+layout_mode = 2
+text = "CLEANER"
+label_settings = SubResource("LabelSettings_7tyjv")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1085797461]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer" unique_id=1734482714]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Latwy" type="Button" parent="CenterContainer/VBoxContainer2" unique_id=620643643]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vhxj7")
+theme_override_font_sizes/font_size = 22
+text = "[ EASY ]"
+
+[node name="Sredni" type="Button" parent="CenterContainer/VBoxContainer2" unique_id=1227794945]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vhxj7")
+theme_override_font_sizes/font_size = 22
+text = "[ MEDIUM ]"
+
+[node name="Trudny" type="Button" parent="CenterContainer/VBoxContainer2" unique_id=2001079631]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vhxj7")
+theme_override_font_sizes/font_size = 22
+text = "[ HARD ]"
+
+[node name="Sterowanie" type="Button" parent="CenterContainer/VBoxContainer2" unique_id=2112410134]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vhxj7")
+theme_override_font_sizes/font_size = 22
+text = "STEROWANIE"
+
+[node name="PanelSterowania" type="ColorRect" parent="." unique_id=1176788868]
+visible = false
+modulate = Color(1.004, 1.004, 1.004, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8666667)
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelSterowania" unique_id=42328975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelSterowania/CenterContainer" unique_id=1274598143]
+layout_mode = 2
+
+[node name="TekstInstrukcji" type="Label" parent="PanelSterowania/CenterContainer/VBoxContainer" unique_id=1968286863]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g3ppw")
+text = "🛸 CEL MISJI 🛸
+Zbieraj kosmiczne śmieci do plecaka (max 4)
+i opróżniaj go, wrzucając odpady do zielonego kosza.
+Uważaj na patrolujące statki obcych!
+
+⌨️ STEROWANIE ⌨️
+Strzałki — Ruch robota lewo/prawo/skok
+SPACJA — Skok
+E — Wrzucanie do kosza
+LCtrl — Ślizg"
+
+[node name="PrzyciskWroc" type="Button" parent="PanelSterowania/CenterContainer/VBoxContainer" unique_id=1578786438]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vhxj7")
+theme_override_font_sizes/font_size = 25
+text = "[ WRÓĆ ]"
+
+[node name="MuzykaMenu" type="AudioStreamPlayer2D" parent="." unique_id=1942642777]
+stream = ExtResource("20_5lhwx")
+autoplay = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Latwy" to="." method="_on_latwy_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Sredni" to="." method="_on_sredni_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Trudny" to="." method="_on_trudny_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Sterowanie" to="." method="_on_sterowanie_pressed"]
+[connection signal="pressed" from="PanelSterowania/CenterContainer/VBoxContainer/PrzyciskWroc" to="." method="_on_przycisk_wroc_pressed"]

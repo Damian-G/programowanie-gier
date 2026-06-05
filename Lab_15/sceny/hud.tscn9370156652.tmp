@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://6uy3611lda8u"]
+
+[ext_resource type="FontFile" uid="uid://cdpbw512f4pw7" path="res://assets/Orbitron-Bold.ttf" id="1_41dpa"]
+[ext_resource type="Script" uid="uid://bsxadt7hlcfoi" path="res://skrypty/licznik.gd" id="1_oit3v"]
+[ext_resource type="Script" uid="uid://doqybixg88oqj" path="res://skrypty/KomunikatPelny.gd" id="2_iqhok"]
+[ext_resource type="Script" uid="uid://pw1qcl5r71ti" path="res://skrypty/smieci_mapa.gd" id="3_iqhok"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s6un7"]
+line_spacing = 2.0
+font = ExtResource("1_41dpa")
+font_size = 25
+font_color = Color(0.67685586, 0.4968171, 1, 1)
+shadow_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_37sfn"]
+font = ExtResource("1_41dpa")
+font_size = 25
+font_color = Color(0.8056607, 0.20937079, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqhok"]
+line_spacing = 2.0
+font = ExtResource("1_41dpa")
+font_size = 25
+font_color = Color(0.6784314, 0.49803922, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=603335785]
+
+[node name="Alarm" type="ColorRect" parent="." unique_id=412431448]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.94701046, 0, 0.14347675, 1)
+
+[node name="SmieciPlecak" type="Label" parent="." unique_id=269548882]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Plecak: 0"
+label_settings = SubResource("LabelSettings_s6un7")
+script = ExtResource("1_oit3v")
+
+[node name="KomunikatPelny" type="Label" parent="." unique_id=1856500407]
+modulate = Color(1, 1, 1, 0)
+offset_top = 59.0
+offset_right = 182.0
+offset_bottom = 94.0
+text = "PLECAK PEŁNY!"
+label_settings = SubResource("LabelSettings_37sfn")
+script = ExtResource("2_iqhok")
+
+[node name="SmieciMapa" type="Label" parent="." unique_id=1644814748]
+offset_top = 30.0
+offset_right = 107.0
+offset_bottom = 65.0
+text = "Wyrzucone:"
+label_settings = SubResource("LabelSettings_iqhok")
+script = ExtResource("3_iqhok")

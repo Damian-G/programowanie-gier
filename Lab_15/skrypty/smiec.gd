@@ -2,8 +2,11 @@ extends Area2D
 
 var tekstury = []
 var zbierany = false
+@onready var dzwiek_zebrania = $DzwiekZebrania
 
 func _ready():
+	Global.smieci_na_mapie += 1
+	
 	for i in range(1, 41):
 		var numer = "%02d" % i 
 		var sciezka = "res://assets/smieci/Icon14_" + numer + ".png"
@@ -31,6 +34,8 @@ func _on_body_entered(body):
 func animuj_zbieranie(gracz):
 	zbierany = true
 	
+	dzwiek_zebrania.play()
+	
 	$CollisionShape2D.set_deferred("disabled", true)
 	
 	var tween = create_tween().set_parallel(true)
@@ -44,4 +49,12 @@ func animuj_zbieranie(gracz):
 	if $Sprite2D.material:
 		tween.tween_property($Sprite2D.material, "shader_parameter/glow_intensity", 5.0, 0.2)
 
-	tween.chain().tween_callback(queue_free)
+	tween.chain().tween_callback(zakoncz_i_usun)
+
+func zakoncz_i_usun():
+	$Sprite2D.visible = false
+	
+	if dzwiek_zebrania.playing:
+		await dzwiek_zebrania.finished
+		
+	queue_free()

@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://ctuy0jwyogwht"]
+
+[ext_resource type="Script" uid="uid://5gmg3xl3hs5e" path="res://skrypty/wygrana.gd" id="1_gm0kv"]
+[ext_resource type="FontFile" uid="uid://cdpbw512f4pw7" path="res://assets/Orbitron-Bold.ttf" id="2_6t3df"]
+[ext_resource type="AudioStream" uid="uid://byegc3otlrqg" path="res://assets/dzwieki/victory.mp3" id="3_6t3df"]
+
+[node name="Wygrana" type="CanvasLayer" unique_id=1050532144]
+process_mode = 3
+script = ExtResource("1_gm0kv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=488718478]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.43529412, 0.21176471, 0.78431374)
+
+[node name="Label" type="Label" parent="." unique_id=1401081174]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -139.5
+offset_right = 219.0
+offset_bottom = -38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6t3df")
+theme_override_font_sizes/font_size = 85
+text = "VICTORY!"
+
+[node name="Label2" type="Label" parent="." unique_id=1761974783]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -52.5
+offset_right = 145.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6t3df")
+theme_override_font_sizes/font_size = 35
+text = "GRATULACJE!"
+
+[node name="Label3" type="Label" parent="." unique_id=189333907]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -11.5
+offset_right = 161.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6t3df")
+theme_override_font_sizes/font_size = 25
+text = "MAPA OCZYSZCZONA!"
+
+[node name="Button" type="Button" parent="." unique_id=1692017300]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 43.0
+offset_right = 119.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6t3df")
+theme_override_font_sizes/font_size = 20
+text = "ZAGRAJ PONOWNIE"
+
+[node name="Button2" type="Button" parent="." unique_id=301224732]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = 87.0
+offset_right = 80.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6t3df")
+theme_override_font_sizes/font_size = 20
+text = "MENU GŁÓWNE"
+
+[node name="dzwiekWygrana" type="AudioStreamPlayer2D" parent="." unique_id=369771258]
+stream = ExtResource("3_6t3df")
+volume_db = 24.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://6uy3611lda8u"]
+
+[ext_resource type="FontFile" uid="uid://cdpbw512f4pw7" path="res://assets/Orbitron-Bold.ttf" id="1_41dpa"]
+[ext_resource type="Texture2D" uid="uid://di6b5ce72kryw" path="res://assets/heart.png" id="2_oit3v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s6un7"]
+line_spacing = 2.0
+font = ExtResource("1_41dpa")
+font_size = 14
+font_color = Color(0.67685586, 0.4968171, 1, 1)
+shadow_color = Color(1, 1, 1, 0)
+
+[sub_resource type="GDScript" id="GDScript_oit3v"]
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"Plecak: \" + str(Global.w_plecaku) + \"/4\"
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_37sfn"]
+font = ExtResource("1_41dpa")
+font_size = 35
+font_color = Color(0.8056607, 0.20937079, 0, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_iqhok"]
+script/source = "extends Label
+
+@onready var tlo_alarmu = $\"../Alarm\" 
+
+var czas = 0.0
+
+var max_intensywnosc_tla = 0.15
+
+func _ready():
+	if tlo_alarmu:
+		tlo_alarmu.modulate.a = 0.0
+
+func _process(delta):
+	if Global.w_plecaku >= 4:
+		visible = true
+		
+		czas += delta * 5.0
+		var falowanie = (sin(czas) + 1.0) / 2.0 
+		
+		modulate.a = falowanie
+		
+		if tlo_alarmu:
+			tlo_alarmu.visible = true
+			tlo_alarmu.modulate.a = falowanie * max_intensywnosc_tla
+	else:
+		visible = false
+		if tlo_alarmu:
+			tlo_alarmu.visible = false
+			tlo_alarmu.modulate.a = 0.0
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqhok"]
+line_spacing = 2.0
+font = ExtResource("1_41dpa")
+font_size = 14
+font_color = Color(0.6784314, 0.49803922, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_41dpa"]
+script/source = "extends Label
+
+func _process(_delta: float) -> void:
+	# Wyświetla: Śmieci na mapie: [wrzucone] / [wszystkie]
+	text = \"Wyrzucone: \" + str(Global.smieci_wrzucone) + \" / \" + str(Global.smieci_na_mapie)
+"
+
+[node name="HUD" type="CanvasLayer" unique_id=603335785]
+
+[node name="Alarm" type="ColorRect" parent="." unique_id=412431448]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.94701046, 0, 0.14347675, 1)
+
+[node name="SmieciPlecak" type="Label" parent="." unique_id=269548882]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Plecak: 0"
+label_settings = SubResource("LabelSettings_s6un7")
+script = SubResource("GDScript_oit3v")
+
+[node name="KomunikatPelny" type="Label" parent="." unique_id=1856500407]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PLECAK PEŁNY!"
+label_settings = SubResource("LabelSettings_37sfn")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_iqhok")
+
+[node name="SmieciMapa" type="Label" parent="." unique_id=1644814748]
+offset_top = 15.0
+offset_right = 107.0
+offset_bottom = 50.0
+text = "Wyrzucone:"
+label_settings = SubResource("LabelSettings_iqhok")
+script = SubResource("GDScript_41dpa")
+
+[node name="KontenerZyc" type="HBoxContainer" parent="." unique_id=1769891730]
+offset_top = 38.0
+offset_right = 953.0
+offset_bottom = 288.0
+scale = Vector2(0.1, 0.1)
+
+[node name="Serce1" type="TextureRect" parent="KontenerZyc" unique_id=1747406790]
+layout_mode = 2
+texture = ExtResource("2_oit3v")
+
+[node name="Serce2" type="TextureRect" parent="KontenerZyc" unique_id=1139322449]
+layout_mode = 2
+texture = ExtResource("2_oit3v")
+
+[node name="Serce3" type="TextureRect" parent="KontenerZyc" unique_id=748286855]
+layout_mode = 2
+texture = ExtResource("2_oit3v")

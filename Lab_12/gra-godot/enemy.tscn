@@ -16,7 +16,6 @@ bullet_scene = ExtResource("2_4gyqm")
 mesh = SubResource("BoxMesh_7k104")
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=1618398851]
-collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=152700541]

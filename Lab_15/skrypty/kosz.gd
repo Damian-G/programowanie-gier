@@ -1,8 +1,10 @@
 extends Area2D
 
 const EFEKT_WYRZUCONY = preload("res://sceny/efekt_wyrzucania.tscn")
-
+var scena_wygranej = preload("res://sceny/wygrana.tscn")
 var wyrzucam = false
+
+@onready var dzwiek_wyrzucania = $DzwiekWyrzucania
 
 func _ready():
 	$EtykietaE.visible = false
@@ -28,9 +30,15 @@ func _process(_delta):
 				
 				var ile_smieci = Global.w_plecaku
 				Global.w_plecaku = 0
-				print("Wyrzucono śmieci: ", ile_smieci)
+				
+				Global.smieci_wrzucone += ile_smieci
+				print("Wyrzucono śmieci: ", ile_smieci, " | Postęp: ", Global.smieci_wrzucone, "/", Global.smieci_na_mapie)
 				
 				stworz_efekty_wyrzucania(ile_smieci, gracz)
+				
+				if Global.smieci_wrzucone >= Global.smieci_na_mapie:
+					wywolaj_wygrana()
+				
 			else:
 				Global.w_plecaku = 0
 				$EtykietaE.visible = false
@@ -40,6 +48,9 @@ func stworz_efekty_wyrzucania(ile, obiekt_gracza):
 		if not is_instance_valid(obiekt_gracza):
 			break
 			
+		dzwiek_wyrzucania.pitch_scale = randf_range(0.9, 1.1)
+		dzwiek_wyrzucania.play()
+		
 		var nowy_efekt = EFEKT_WYRZUCONY.instantiate()
 		get_tree().current_scene.add_child(nowy_efekt)
 		
@@ -51,3 +62,15 @@ func stworz_efekty_wyrzucania(ile, obiekt_gracza):
 		await get_tree().create_timer(0.15).timeout
 	
 	wyrzucam = false
+
+func wywolaj_wygrana():
+	var instancja = scena_wygranej.instantiate()
+	get_tree().current_scene.add_child(instancja)
+	
+	var gracz = get_tree().get_first_node_in_group("Gracz")
+	
+	if gracz:
+		if "velocity" in gracz:
+			gracz.velocity = Vector2.ZERO
+			
+		gracz.set_physics_process(false)

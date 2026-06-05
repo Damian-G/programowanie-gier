@@ -5,7 +5,7 @@ var is_invincible: bool = false #flaga do beczki
 
 #zmienne ruchu
 @export var speed: float = 5.0
-@export var LIMIT_X: float = 3.5
+@export var LIMIT_X: float = 4.5
 @export var LIMIT_Y: float = 2.0
 
 #zmienne strzelania

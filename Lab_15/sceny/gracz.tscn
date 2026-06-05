@@ -1,0 +1,579 @@
+[gd_scene format=3 uid="uid://c2lr3h41hh0rl"]
+
+[ext_resource type="Texture2D" uid="uid://ck0ynanmq3s0x" path="res://assets/gracz/Dead (1).png" id="1_2jt44"]
+[ext_resource type="Texture2D" uid="uid://cq6jh4nerbacr" path="res://assets/gracz/Dead (2).png" id="2_tpoks"]
+[ext_resource type="Texture2D" uid="uid://b5xsjg667eiin" path="res://assets/gracz/Idle (1).png" id="2_ty584"]
+[ext_resource type="Texture2D" uid="uid://7521mxqrnqr" path="res://assets/gracz/Dead (3).png" id="3_p78lp"]
+[ext_resource type="Texture2D" uid="uid://dsqftlc36h247" path="res://assets/gracz/Idle (2).png" id="3_yhis3"]
+[ext_resource type="Texture2D" uid="uid://rfr1wf4dowgp" path="res://assets/gracz/Dead (4).png" id="4_2dtts"]
+[ext_resource type="Texture2D" uid="uid://bto5efl4rvqy3" path="res://assets/gracz/Idle (3).png" id="4_fr6ws"]
+[ext_resource type="Texture2D" uid="uid://bv38sveaagykk" path="res://assets/gracz/Idle (4).png" id="5_f8tl1"]
+[ext_resource type="Texture2D" uid="uid://cloh8msutpos7" path="res://assets/gracz/Dead (5).png" id="5_fou2h"]
+[ext_resource type="Texture2D" uid="uid://bmxnojh1uso1v" path="res://assets/gracz/Dead (6).png" id="6_atrmp"]
+[ext_resource type="Texture2D" uid="uid://ynwgexccq8h6" path="res://assets/gracz/Idle (5).png" id="6_ndxpr"]
+[ext_resource type="Texture2D" uid="uid://cvhxhryp4u5o6" path="res://assets/gracz/Idle (6).png" id="7_kr16y"]
+[ext_resource type="Texture2D" uid="uid://bx5a87p8tgokj" path="res://assets/gracz/Dead (7).png" id="7_t0mxb"]
+[ext_resource type="Texture2D" uid="uid://c15ox7fgch1cv" path="res://assets/gracz/Idle (7).png" id="8_flehx"]
+[ext_resource type="Texture2D" uid="uid://d0lomy6iasew2" path="res://assets/gracz/Dead (8).png" id="8_rkron"]
+[ext_resource type="Texture2D" uid="uid://xoka13ky5mqt" path="res://assets/gracz/Idle (8).png" id="9_0668w"]
+[ext_resource type="Texture2D" uid="uid://csvqiqn7v6i4c" path="res://assets/gracz/Dead (9).png" id="9_stmhg"]
+[ext_resource type="Texture2D" uid="uid://dlh0jkc1f2xfd" path="res://assets/gracz/Idle (9).png" id="10_2jt44"]
+[ext_resource type="Texture2D" uid="uid://dum88cqeu7sof" path="res://assets/gracz/Dead (10).png" id="10_jyp1l"]
+[ext_resource type="Texture2D" uid="uid://dkdejxmcih7t7" path="res://assets/gracz/Jump (6).png" id="11_8v2g4"]
+[ext_resource type="Texture2D" uid="uid://vnf7ldvgnk0q" path="res://assets/gracz/Idle (10).png" id="11_tpoks"]
+[ext_resource type="Texture2D" uid="uid://gm550p3ir7yk" path="res://assets/gracz/Jump (7).png" id="12_myu1a"]
+[ext_resource type="Texture2D" uid="uid://c2koje1b874do" path="res://assets/gracz/Run (1).png" id="12_p78lp"]
+[ext_resource type="Texture2D" uid="uid://dvvchp5164y3p" path="res://assets/gracz/Run (2).png" id="13_2dtts"]
+[ext_resource type="Texture2D" uid="uid://cekthx0xpfaka" path="res://assets/gracz/Jump (8).png" id="13_qojsx"]
+[ext_resource type="Texture2D" uid="uid://bf21djy3uag6l" path="res://assets/gracz/Jump (9).png" id="14_dem7b"]
+[ext_resource type="Texture2D" uid="uid://b8xsslbafvpp1" path="res://assets/gracz/Run (3).png" id="14_fou2h"]
+[ext_resource type="Texture2D" uid="uid://c3mrmages6agm" path="res://assets/gracz/Run (4).png" id="15_atrmp"]
+[ext_resource type="Texture2D" uid="uid://j5s8x7lxs1mb" path="res://assets/gracz/Jump (10).png" id="15_pp1t4"]
+[ext_resource type="Texture2D" uid="uid://cqn0xdnhne3se" path="res://assets/gracz/Run (5).png" id="16_t0mxb"]
+[ext_resource type="Texture2D" uid="uid://d1y51bq1sabmw" path="res://assets/gracz/Run (6).png" id="17_rkron"]
+[ext_resource type="Texture2D" uid="uid://c87br4anuoavr" path="res://assets/gracz/Run (7).png" id="18_stmhg"]
+[ext_resource type="Texture2D" uid="uid://vlgphwcmfglp" path="res://assets/gracz/Run (8).png" id="19_jyp1l"]
+[ext_resource type="Texture2D" uid="uid://o0fb6wiwefpt" path="res://assets/gracz/Jump (1).png" id="26_8iehq"]
+[ext_resource type="Texture2D" uid="uid://perd22os1jr7" path="res://assets/gracz/Jump (2).png" id="27_mepv3"]
+[ext_resource type="Texture2D" uid="uid://1maa5nph82bt" path="res://assets/gracz/Jump (3).png" id="28_jkm8e"]
+[ext_resource type="Texture2D" uid="uid://dqvosfagbmxe4" path="res://assets/gracz/Jump (4).png" id="29_epvbf"]
+[ext_resource type="Texture2D" uid="uid://ckg7djkl8qj3a" path="res://assets/gracz/Jump (5).png" id="30_pwpmw"]
+[ext_resource type="Texture2D" uid="uid://d0iehis0gwknb" path="res://assets/gracz/RunShoot (1).png" id="33_d2pyu"]
+[ext_resource type="Texture2D" uid="uid://dli61bh3581y" path="res://assets/gracz/RunShoot (2).png" id="34_gq6nk"]
+[ext_resource type="Texture2D" uid="uid://cqv02euw6423l" path="res://assets/gracz/RunShoot (3).png" id="35_5yjpm"]
+[ext_resource type="Texture2D" uid="uid://dnck6cni4lbh8" path="res://assets/gracz/RunShoot (4).png" id="36_d7ylv"]
+[ext_resource type="Texture2D" uid="uid://ws8ew3mw87g8" path="res://assets/gracz/RunShoot (5).png" id="37_dnwcc"]
+[ext_resource type="Texture2D" uid="uid://kjl2rkvak3ss" path="res://assets/gracz/RunShoot (6).png" id="38_kqpyh"]
+[ext_resource type="Texture2D" uid="uid://cbv2ulmjfg1e" path="res://assets/gracz/Slide (1).png" id="39_3cu25"]
+[ext_resource type="Texture2D" uid="uid://8vx8vuhniymp" path="res://assets/gracz/RunShoot (7).png" id="39_v6ejw"]
+[ext_resource type="Texture2D" uid="uid://cbkj2ndxotmiy" path="res://assets/gracz/RunShoot (8).png" id="40_f426g"]
+[ext_resource type="Texture2D" uid="uid://km08kavnjw41" path="res://assets/gracz/Slide (2).png" id="40_qdwjl"]
+[ext_resource type="Texture2D" uid="uid://drhs77esggp3s" path="res://assets/gracz/Slide (3).png" id="41_3nqn0"]
+[ext_resource type="Texture2D" uid="uid://ckrs6kr6gwj3x" path="res://assets/gracz/RunShoot (9).png" id="41_q3ejs"]
+[ext_resource type="Texture2D" uid="uid://daewhybmakpdc" path="res://assets/gracz/Slide (4).png" id="42_p40ri"]
+[ext_resource type="Texture2D" uid="uid://dsfha3slwya8l" path="res://assets/gracz/Slide (5).png" id="43_l8q1c"]
+[ext_resource type="Texture2D" uid="uid://dk47f7325sxts" path="res://assets/gracz/Slide (6).png" id="44_58gql"]
+[ext_resource type="Texture2D" uid="uid://dvrbvdbdlobjj" path="res://assets/gracz/Slide (7).png" id="45_pluvj"]
+[ext_resource type="Texture2D" uid="uid://cnanuajh215dw" path="res://assets/gracz/Slide (8).png" id="46_ct2on"]
+[ext_resource type="Texture2D" uid="uid://cpedow7xhd2rb" path="res://assets/gracz/Slide (9).png" id="47_upwop"]
+[ext_resource type="Texture2D" uid="uid://1lb2slayay8u" path="res://assets/gracz/Slide (10).png" id="48_1wer4"]
+[ext_resource type="AudioStream" uid="uid://dp11hypf4dxl5" path="res://assets/dzwieki/strzalGracza.mp3" id="49_qdwjl"]
+[ext_resource type="AudioStream" uid="uid://bh0luhacs1b7p" path="res://assets/dzwieki/gameOver.mp3" id="50_3nqn0"]
+[ext_resource type="Texture2D" uid="uid://b1ekwy1hrq5u0" path="res://assets/gracz/Shoot (1).png" id="50_dnwcc"]
+[ext_resource type="Texture2D" uid="uid://b3weuyt10i5yc" path="res://assets/gracz/Shoot (2).png" id="51_kqpyh"]
+[ext_resource type="AudioStream" uid="uid://bbj66kxykqxju" path="res://assets/dzwieki/obrazenia.mp3" id="51_p40ri"]
+[ext_resource type="AudioStream" uid="uid://crnfray28nai0" path="res://assets/dzwieki/jump.mp3" id="52_l8q1c"]
+[ext_resource type="Texture2D" uid="uid://cx01o4cxbj6mm" path="res://assets/gracz/Shoot (3).png" id="52_v6ejw"]
+[ext_resource type="Texture2D" uid="uid://bes1dec7a2pm1" path="res://assets/gracz/Shoot (4).png" id="53_f426g"]
+[ext_resource type="AudioStream" uid="uid://6veegedyk5ax" path="res://assets/dzwieki/swosh.mp3" id="66_dnwcc"]
+
+[sub_resource type="GDScript" id="GDScript_texq8"]
+resource_name = "gracz.gd"
+script/source = "extends CharacterBody2D
+
+enum Stany { IDLE, RUN, JUMP, FALL, DEAD, SLIDE, SHOOT }
+var aktualny_stan = Stany.IDLE
+
+@export var SPEED = 120.0
+@export var JUMP_VELOCITY = -340.0
+
+@export var max_zycia: int = 3
+@export var limit_mapy_y: float = 590.0 
+var aktualne_zycia: int = max_zycia
+var czy_nietykalny: bool = false
+
+var ekran_przegranej = preload(\"res://sceny/przegrana.tscn\")
+var scena_pocisku = preload(\"res://sceny/pocisk_gracza.tscn\")
+
+@onready var lufa = $Lufa
+@onready var animacja = $AnimatedSprite2D
+
+@onready var kolizja_stojaca = $KolizjaStojaca
+@onready var kolizja_slizgu = $KolizjaSlizgu
+@onready var czujnik_sufitu = $CzujnikSufitu
+
+@onready var dzwiek_strzalu = $DzwiekStrzalu
+@onready var dzwiek_smierci = $DzwiekSmierci
+@onready var dzwiek_bolu = $DzwiekBolu
+@onready var dzwiek_skoku = $DzwiekSkoku
+@onready var dzwiek_slizgu = $DzwiekSlizgu
+
+func _ready() -> void:
+	if not is_in_group(\"Gracz\"):
+		add_to_group(\"Gracz\")
+
+func _physics_process(delta: float) -> void:
+	if global_position.y > limit_mapy_y and aktualny_stan != Stany.DEAD:
+		velocity = Vector2.ZERO 
+		set_physics_process(false) 
+		wykonaj_pelna_smierc()
+		return
+
+	if aktualny_stan == Stany.DEAD:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		else:
+			velocity.x = 0
+		move_and_slide()
+		return
+
+	# STRZAŁ
+	if Input.is_action_just_pressed(\"strzal\"):
+		strzel()
+
+	# GRAWITACJA
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	if is_on_floor():
+		if Input.is_action_just_pressed(\"skok\"):
+			velocity.y = JUMP_VELOCITY
+			dzwiek_skoku.play()
+		elif Input.is_action_just_pressed(\"slizg\"):
+			wykonaj_slizg()
+
+	if aktualny_stan != Stany.SLIDE:
+		var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+		if direction:
+			velocity.x = direction * SPEED
+			animacja.flip_h = direction < 0
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	if animacja.flip_h:
+		lufa.position.x = -abs(lufa.position.x)
+	else:
+		lufa.position.x = abs(lufa.position.x)
+
+	_aktualizuj_stan()
+	_odtworz_animacje()
+	move_and_slide()
+
+# --- NOWA FUNKCJA LECZENIA ---
+func ulecz(ilosc: int):
+	if aktualny_stan != Stany.DEAD and aktualne_zycia < max_zycia:
+		aktualne_zycia += ilosc
+		aktualne_zycia = min(aktualne_zycia, max_zycia)
+		get_tree().call_group(\"HUD\", \"aktualizuj_zycia\", aktualne_zycia)
+		print(\"Leczenie! Aktualne życie: \", aktualne_zycia)
+
+func strzel():
+	if aktualny_stan == Stany.SHOOT: return
+	
+	dzwiek_strzalu.play()
+	var p = scena_pocisku.instantiate()
+	p.kierunek_ruchu = -1.0 if animacja.flip_h else 1.0
+	get_parent().add_child(p)
+	p.global_position = lufa.global_position
+	
+	var poprzedni_stan = aktualny_stan
+	aktualny_stan = Stany.SHOOT
+	_odtworz_animacje()
+	
+	await get_tree().create_timer(0.3).timeout
+	aktualny_stan = poprzedni_stan
+
+func _aktualizuj_stan():
+	if aktualny_stan == Stany.DEAD or aktualny_stan == Stany.SLIDE or aktualny_stan == Stany.SHOOT:
+		return
+
+	if not is_on_floor():
+		if velocity.y < 0:
+			aktualny_stan = Stany.JUMP
+		else:
+			aktualny_stan = Stany.FALL
+	else:
+		if velocity.x != 0:
+			aktualny_stan = Stany.RUN
+		else:
+			aktualny_stan = Stany.IDLE
+
+func _odtworz_animacje():
+	match aktualny_stan:
+		Stany.IDLE:
+			animacja.play(\"idle\")
+		Stany.RUN:
+			animacja.play(\"run\")
+		Stany.JUMP:
+			if animacja.sprite_frames.has_animation(\"jump\"):
+				animacja.play(\"jump\")
+		Stany.FALL:
+			if animacja.sprite_frames.has_animation(\"fall\"):
+				animacja.play(\"fall\")
+		Stany.DEAD:
+			animacja.play(\"death\")
+		Stany.SLIDE:
+			animacja.play(\"slide\")
+		Stany.SHOOT:
+			if abs(velocity.x) > 0:
+				animacja.play(\"runshoot\")
+			else:
+				animacja.play(\"shoot\")
+
+func wykonaj_slizg():
+	dzwiek_slizgu.play()
+	aktualny_stan = Stany.SLIDE
+	velocity.x = 250 if not animacja.flip_h else -250
+	_odtworz_animacje()
+	
+	kolizja_stojaca.set_deferred(\"disabled\", true)
+	kolizja_slizgu.set_deferred(\"disabled\", false)
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	while czujnik_sufitu.is_colliding():
+		velocity.x = 100 if not animacja.flip_h else -100
+		await get_tree().physics_frame
+	
+	kolizja_stojaca.set_deferred(\"disabled\", false)
+	kolizja_slizgu.set_deferred(\"disabled\", true)
+	
+	aktualny_stan = Stany.IDLE
+
+func ginie():
+	if aktualny_stan == Stany.DEAD or czy_nietykalny:
+		return
+
+	aktualne_zycia -= 1
+	get_tree().call_group(\"HUD\", \"aktualizuj_zycia\", aktualne_zycia)
+
+	if aktualne_zycia <= 0:
+		wykonaj_pelna_smierc()
+	else:
+		uruchom_nietykalnosc()
+
+func uruchom_nietykalnosc():
+	czy_nietykalny = true
+	dzwiek_bolu.play() 
+	
+	var tween = create_tween().set_loops(6)
+	tween.tween_property(animacja, \"modulate:a\", 0.2, 0.12)
+	tween.tween_property(animacja, \"modulate:a\", 1.0, 0.12)
+	
+	await tween.finished
+	animacja.modulate.a = 1.0
+	czy_nietykalny = false
+
+func wykonaj_pelna_smierc():
+	aktualny_stan = Stany.DEAD
+	dzwiek_smierci.play()
+	
+	if is_in_group(\"Gracz\"):
+		remove_from_group(\"Gracz\")
+		
+	collision_layer = 0 
+	velocity.y = -150
+	_odtworz_animacje()
+	
+	get_tree().call_group(\"Wrogowie\", \"reset_celu\")
+	
+	await get_tree().create_timer(1.0).timeout
+	var nakladka = ekran_przegranej.instantiate()
+	get_tree().current_scene.add_child(nakladka)
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8v2g4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_3cu25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qdwjl")
+}],
+"loop": false,
+"name": &"burning",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2jt44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tpoks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p78lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2dtts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fou2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_atrmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t0mxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rkron")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_stmhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jyp1l")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8v2g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_myu1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qojsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dem7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pp1t4")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ty584")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yhis3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fr6ws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f8tl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ndxpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kr16y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_flehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0668w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2jt44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tpoks")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_8iehq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mepv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jkm8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_epvbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_pwpmw")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_tpoks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p78lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2dtts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fou2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_atrmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t0mxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rkron")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_stmhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jyp1l")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_d2pyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gq6nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_5yjpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_d7ylv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dnwcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_kqpyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_v6ejw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_f426g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_q3ejs")
+}],
+"loop": true,
+"name": &"runshoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_qojsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_dnwcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kqpyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_v6ejw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_f426g")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_3cu25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qdwjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_3nqn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_p40ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_l8q1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_58gql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_pluvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ct2on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_upwop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_1wer4")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myu1a"]
+radius = 29.949997
+height = 117.2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cu25"]
+radius = 26.999996
+height = 53.999992
+
+[node name="Node2D" type="Node2D" unique_id=1339027828 groups=["Gracz"]]
+
+[node name="Gracz" type="CharacterBody2D" parent="." unique_id=1897772324 groups=["Gracz"]]
+collision_layer = 2
+collision_mask = 129
+script = SubResource("GDScript_texq8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gracz" unique_id=721075900]
+position = Vector2(6, 0)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_8v2g4")
+animation = &"slide"
+
+[node name="KolizjaStojaca" type="CollisionShape2D" parent="Gracz" unique_id=1798090016]
+shape = SubResource("CapsuleShape2D_myu1a")
+
+[node name="Camera2D" type="Camera2D" parent="Gracz" unique_id=1491858740]
+zoom = Vector2(1.8, 1.8)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+rotation_smoothing_speed = 0.3
+
+[node name="Lufa" type="Marker2D" parent="Gracz" unique_id=101935334]
+position = Vector2(54, 9)
+
+[node name="KolizjaSlizgu" type="CollisionShape2D" parent="Gracz" unique_id=1217322699]
+position = Vector2(-2, 23)
+rotation = -6.2831855
+shape = SubResource("CapsuleShape2D_3cu25")
+
+[node name="CzujnikSufitu" type="RayCast2D" parent="Gracz" unique_id=2033653339]
+position = Vector2(0, 19)
+target_position = Vector2(0, -20)
+
+[node name="DzwiekStrzalu" type="AudioStreamPlayer2D" parent="Gracz" unique_id=184771047]
+stream = ExtResource("49_qdwjl")
+volume_db = -10.321
+
+[node name="DzwiekSmierci" type="AudioStreamPlayer2D" parent="Gracz" unique_id=1207855612]
+stream = ExtResource("50_3nqn0")
+volume_db = 17.465
+
+[node name="DzwiekBolu" type="AudioStreamPlayer2D" parent="Gracz" unique_id=583516758]
+stream = ExtResource("51_p40ri")
+
+[node name="DzwiekSkoku" type="AudioStreamPlayer2D" parent="Gracz" unique_id=1253176417]
+stream = ExtResource("52_l8q1c")
+volume_db = -3.176
+
+[node name="DzwiekSlizgu" type="AudioStreamPlayer2D" parent="Gracz" unique_id=916847768]
+stream = ExtResource("66_dnwcc")
+volume_db = 7.145
+pitch_scale = 0.52
+panning_strength = 0.0

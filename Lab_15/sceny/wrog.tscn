@@ -2,35 +2,78 @@
 
 [ext_resource type="Script" uid="uid://ymsud4j7u8tb" path="res://skrypty/wrog.gd" id="1_pkgep"]
 [ext_resource type="SpriteFrames" uid="uid://ceui0kvw15n0j" path="res://wrog1.tres" id="2_pkgep"]
+[ext_resource type="AudioStream" uid="uid://bw04cmhajrpxm" path="res://assets/dzwieki/strzalWroga.mp3" id="3_jwucp"]
+[ext_resource type="Texture2D" uid="uid://doxu587l5360b" path="res://assets/wybuch/explosion-1-b-1.png" id="4_50sg2"]
+[ext_resource type="Texture2D" uid="uid://d1kdbmgoc7oms" path="res://assets/wybuch/explosion-1-b-2.png" id="5_id5wk"]
+[ext_resource type="Texture2D" uid="uid://brg1si1ptvlum" path="res://assets/wybuch/explosion-1-b-3.png" id="6_gnf2b"]
+[ext_resource type="Texture2D" uid="uid://dbvne0emmirnm" path="res://assets/wybuch/explosion-1-b-4.png" id="7_e40on"]
+[ext_resource type="Texture2D" uid="uid://bu55ms06u8odk" path="res://assets/wybuch/explosion-1-b-5.png" id="8_jxm6o"]
+[ext_resource type="Texture2D" uid="uid://bc8c1aic6mxil" path="res://assets/wybuch/explosion-1-b-6.png" id="9_mfixe"]
+[ext_resource type="Texture2D" uid="uid://cbhctui1pq1ha" path="res://assets/wybuch/explosion-1-b-7.png" id="10_1cd1j"]
+[ext_resource type="Texture2D" uid="uid://b3wg14g11aejt" path="res://assets/wybuch/explosion-1-b-8.png" id="11_cxeck"]
+[ext_resource type="AudioStream" uid="uid://cttr1ck3r1m" path="res://assets/dzwieki/eksplozja.mp3" id="12_id5wk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50sg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkgep"]
 size = Vector2(20, 19)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qs65o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_50sg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_id5wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gnf2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e40on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jxm6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mfixe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1cd1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cxeck")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 15.0
+}]
+
 [node name="Wrog" type="CharacterBody2D" unique_id=905265754 groups=["Wrogowie"]]
+collision_layer = 4
+motion_mode = 1
 script = ExtResource("1_pkgep")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=73935801]
-position = Vector2(-1.1920929e-07, 2)
 scale = Vector2(0.6142857, 0.6142857)
 sprite_frames = ExtResource("2_pkgep")
-animation = &"fly"
+animation = &"wyglad9"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330039769]
-position = Vector2(-1, 3)
 shape = SubResource("CircleShape2D_50sg2")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1113840620]
+collision_layer = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=527499525]
-position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_pkgep")
 
 [node name="Wzrok" type="RayCast2D" parent="." unique_id=1030276539]
-position = Vector2(-1.0000001, 2.9999971)
 rotation = -0.0071393284
-target_position = Vector2(14.9996195, 0.107091665)
+target_position = Vector2(-0.12850684, 17.999542)
+collision_mask = 2
 
 [node name="TimerStrzalu" type="Timer" parent="." unique_id=1841863222]
 one_shot = true
@@ -38,6 +81,38 @@ autostart = true
 
 [node name="Lufa" type="Marker2D" parent="." unique_id=706099901]
 position = Vector2(0, -4)
+
+[node name="DzwiekStrzalu" type="AudioStreamPlayer2D" parent="." unique_id=33475268]
+stream = ExtResource("3_jwucp")
+volume_db = -10.321
+
+[node name="PasekZycia" type="ProgressBar" parent="." unique_id=810729508]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 18.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+theme_override_colors/font_color = Color(0.9638092, 0.9354811, 1, 1)
+max_value = 3.0
+value = 3.0
+fill_mode = 3
+show_percentage = false
+
+[node name="EfektEksplozji" type="AnimatedSprite2D" parent="." unique_id=14056423]
+visible = false
+sprite_frames = SubResource("SpriteFrames_qs65o")
+animation = &"explosion"
+
+[node name="DzwiekEksplozji" type="AudioStreamPlayer2D" parent="EfektEksplozji" unique_id=1258023389]
+stream = ExtResource("12_id5wk")
+volume_db = 7.329
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="TimerStrzalu" to="." method="_on_timer_strzalu_timeout"]

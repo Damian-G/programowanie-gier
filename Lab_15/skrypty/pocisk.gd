@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 400.0
+@export var speed = 150.0
 var direction = Vector2.ZERO
 var wlasciciel_pocisku = null
 

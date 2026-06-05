@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cticllqq3xdfy"]
+
+[ext_resource type="Script" uid="uid://ds77pajns71ud" path="res://skrypty/pocisk_gracza.gd" id="1_mptig"]
+[ext_resource type="Texture2D" uid="uid://cewpg6n5dbde8" path="res://assets/pociski/Bullet_000.png" id="2_5g7gb"]
+[ext_resource type="Texture2D" uid="uid://dstuk8ffhn2eb" path="res://assets/pociski/Bullet_000 — kopia.png" id="2_yabkj"]
+[ext_resource type="Texture2D" uid="uid://c1hq1udv2xwko" path="res://assets/pociski/Bullet_001 — kopia.png" id="3_c1txs"]
+[ext_resource type="Texture2D" uid="uid://0r0uthknvcsf" path="res://assets/pociski/Bullet_001.png" id="3_pqwqt"]
+[ext_resource type="Texture2D" uid="uid://d2e1hu4u56n8b" path="res://assets/pociski/Bullet_002.png" id="4_1ktkl"]
+[ext_resource type="Texture2D" uid="uid://bjqfftx6vyd4n" path="res://assets/pociski/Bullet_002 — kopia.png" id="4_c63cj"]
+[ext_resource type="Texture2D" uid="uid://corifau10wlw3" path="res://assets/pociski/Bullet_003.png" id="5_1kbqr"]
+[ext_resource type="Texture2D" uid="uid://d1njssl80tpa1" path="res://assets/pociski/Bullet_003 — kopia.png" id="5_epyhv"]
+[ext_resource type="Texture2D" uid="uid://bo4n8hee42vhg" path="res://assets/pociski/Bullet_004 — kopia.png" id="6_815w4"]
+[ext_resource type="Texture2D" uid="uid://b58viv71q8rc4" path="res://assets/pociski/Bullet_004.png" id="6_vfsvy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yabkj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5g7gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pqwqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1ktkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1kbqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vfsvy")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yabkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c1txs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c63cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_epyhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_815w4")
+}],
+"loop": true,
+"name": &"fly_left",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1txs"]
+size = Vector2(30, 28)
+
+[node name="PociskGracza" type="Area2D" unique_id=2109286382]
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_mptig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1687264512]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_yabkj")
+animation = &"fly"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072821900]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_c1txs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

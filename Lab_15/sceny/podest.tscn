@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dsfurst61djtm"]
+
+[ext_resource type="Script" uid="uid://d1f0fsvh0sae3" path="res://skrypty/podest.gd" id="1_7386h"]
+[ext_resource type="Texture2D" uid="uid://cyo50647y1jww" path="res://assets/mapa/trawa.png" id="2_v0pjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygduk"]
+size = Vector2(30, 8)
+
+[node name="Podest" type="AnimatableBody2D" unique_id=1724236693]
+script = ExtResource("1_7386h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1826812410]
+position = Vector2(-5, -3)
+texture = ExtResource("2_v0pjx")
+region_enabled = true
+region_rect = Rect2(16, 104, 15, 8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1734249508]
+position = Vector2(10, -3)
+texture = ExtResource("2_v0pjx")
+region_enabled = true
+region_rect = Rect2(17, 104, 15, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419158410]
+position = Vector2(3, -3)
+shape = SubResource("RectangleShape2D_ygduk")
