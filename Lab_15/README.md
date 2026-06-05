@@ -6,7 +6,7 @@
 
 ![Ekran z gry](gra.png)
 
-> **Galaxy Cleaner** to dynamiczna gra zręcznościowa 2D osadzona w przestrzeni kosmicznej. Gracz wciela się w postać robota-sprzątacza, którego celem jest oczyszczenie planety z zalegających odpadów. Rozgrywka polega na zbieraniu śmieci i dostarczaniu ich do wyznaczonego kosza. Na drodze gracza stoją przeciwnicy oraz pułapki terenowe. Gra oferuje trzy poziomy trudności (łatwy, średni, trudny), które różnią się intensywnością spawnienia obiektów oraz liczbą przeciwników.
+> **Galaxy Cleaner** to dynamiczna gra zręcznościowa 2D osadzona w przestrzeni kosmicznej. Gracz wciela się w postać robota-sprzątacza, którego celem jest oczyszczenie planety z zalegających odpadów. Rozgrywka polega na zbieraniu śmieci i dostarczaniu ich do wyznaczonego kosza. Na drodze gracza stoją przeciwnicy oraz pułapki terenowe. Gra oferuje trzy poziomy trudności (**łatwy**, **średni**, **trudny**), które różnią się intensywnością spawnienia obiektów oraz liczbą przeciwników.
 
 ---
 
@@ -64,7 +64,7 @@ Gra wykorzystuje zaawansowane efekty wizualne stworzone w języku shaderów:
 ---
 
 ## Znane bugi
-* * **Kolizja podczas ślizgu:** Podczas gdy gracz aktywuje ślizg bezpośrednio przy kolizji z kafelkiem, może dojść do zablokowania mechaniki ślizgu.
+* * Kolizja podczas ślizgu:** Podczas gdy gracz aktywuje ślizg bezpośrednio przy kolizji z kafelkiem, może dojść do zablokowania mechaniki ślizgu.
 
 ---
 
