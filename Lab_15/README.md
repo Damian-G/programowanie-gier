@@ -78,4 +78,4 @@ Gra wykorzystuje zaawansowane efekty wizualne stworzone w języku shaderów:
 ---
 
 ## Autor
-**Damian Grzyb (89245)
+**Damian Grzyb (89245)**
